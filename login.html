@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login - Management System</title><link rel="stylesheet" href="style.css"></head>
+<body class="auth">
+<div class="logo">M</div><h1>Welcome Back!</h1><p class="sub">Sign in to continue to your account.</p>
+<div class="card">
+ <h2>Login to your account</h2><p class="desc">Enter your email and password to get started.</p>
+ <form id="loginForm" novalidate>
+  <div class="field"><label for="email">Email Address</label><div class="input"><input id="email" type="email" placeholder="name@example.com"></div><div class="error" id="emailErr"></div></div>
+  <div class="field"><div class="row"><label for="password">Password</label><a href="help.html">Forgot password?</a></div><div class="input"><input id="password" type="password" placeholder="Enter your password"><button type="button" class="show" id="toggle">Show</button></div><div class="error" id="pwErr"></div></div>
+  <label class="remember"><input type="checkbox"> Remember me</label>
+  <button class="signin" type="submit">Sign In</button>
+ </form>
+ <div class="switch">Don't have an account? <a href="register.html">Create an account</a></div>
+</div>
+<p class="copy">© 2026 My Website. All rights reserved.</p>
+<script>
+var pw=document.getElementById('password'),t=document.getElementById('toggle');
+t.onclick=function(){var s=pw.type==='password';pw.type=s?'text':'password';t.textContent=s?'Hide':'Show'};
+document.getElementById('loginForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ var em=document.getElementById('email').value.trim(),p=pw.value,ok=true;
+ var ee=document.getElementById('emailErr'),pe=document.getElementById('pwErr');ee.textContent='';pe.textContent='';
+ if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){ee.textContent='Please enter a valid email address.';ok=false}
+ if(!p){pe.textContent='Please enter your password.';ok=false}
+ if(ok){alert('Login successful');location.href='home.html'}
+});
+</script></body></html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sign Up - Management System</title><link rel="stylesheet" href="style.css"></head>
+<body class="auth">
+<div class="logo">M</div><h1>Create Account</h1><p class="sub">Sign up to start organizing your work.</p>
+<div class="card">
+ <form id="f" novalidate>
+  <div class="field"><label for="n">Full Name</label><div class="input"><input id="n" type="text" placeholder="Your name"></div></div>
+  <div class="field"><label for="e">Email Address</label><div class="input"><input id="e" type="email" placeholder="name@example.com"></div></div>
+  <div class="field"><label for="p">Password</label><div class="input"><input id="p" type="password" placeholder="Create a password"></div><div class="error" id="err"></div></div>
+  <button class="signin" type="submit">Sign Up</button>
+ </form>
+ <div class="switch">Already have an account? <a href="login.html">Sign in</a></div>
+</div>
+<p class="copy">© 2026 My Website. All rights reserved.</p>
+<script>document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+var n=document.getElementById('n').value.trim(),m=document.getElementById('e').value.trim(),p=document.getElementById('p').value,er=document.getElementById('err');
+if(!n||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(m)||p.length<6){er.textContent='Enter a name, valid email and a password of 6+ characters.';return}
+alert('Account created');location.href='login.html'});</script></body></html>
